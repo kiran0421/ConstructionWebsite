@@ -1,0 +1,78 @@
+.homeContainer {
+  width: 100%;
+}
+
+.homeBanner {
+  position: absolute; /* Keep it fixed at the top of the screen */
+  top: 0;
+  left: 0;
+  background-image: url("/Homebanner.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh; /* Ensure the banner covers full viewport height */
+}
+
+.logo {
+  width: 6em;
+  height: 6em;
+  padding: 10px;
+}
+
+.companyText {
+  padding: 2rem 5rem;
+  color: white;
+  font-size: 48px;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5); /* Darker shadow for better contrast */
+}
+
+.companySubText {
+  padding: 2rem 5rem;
+  color: white;
+  font-size: 24px;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5); /* Darker shadow for better contrast */
+}
+
+.bannerContentPadding {
+  padding: 0rem 5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 0;
+  left: 25rem;
+}
+
+.bannercards {
+  width: auto; /* Allow the width to adjust based on content */
+  max-width: 300px; /* Limit max width for responsiveness */
+  color: white;
+  font-size: 24px;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5); /* Darker shadow for better readability */
+  margin: 2rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.bannercards:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.homeContent {
+  position: relative; /* Ensure proper stacking context */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Make the background a little more opaque */
+  padding: 4rem 0;
+  margin-top: 100vh; /* Push content below the banner */
+}
