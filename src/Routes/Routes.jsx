@@ -7,13 +7,15 @@ import HomePage from "../Pages/Home/Home";
 import LoginPage from "../Components/LoginPage";
 import SignupPage from "../Components/SignupPage";
 import AboutUsPage from "../Pages/About";
-import ServicesPage from "../Pages/Services";
+import ServicesPage from "../Pages/Services/Services";
 import GroupHouses from "../Pages/Services/GroupHouses";
 import IndependentHouses from "../Pages/Services/IndependentHouses";
 import HouseLevel from "../Pages/Services/HouseLevel";
 import Villas from "../Pages/Services/Villas";
 import Apartments from "../Pages/Services/Apartments";
 import GatedCommunities from "../Pages/Services/GatedCommunities";
+import Contactus from "../Pages/Contactus";
+import ServicesMainPage from "../Pages/Services/ServicesMainPage";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +51,18 @@ const router = createBrowserRouter([
     ),
     children: [
       {
+        index: true,
+        element: (
+          <ProtectedRoute>
+            <ServicesMainPage />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "main",
+        element: <ServicesPage />,
+      },
+      {
         path: "group-houses",
         element: <GroupHouses />,
       },
@@ -75,6 +89,14 @@ const router = createBrowserRouter([
         element: <GatedCommunities />,
       },
     ],
+  },
+  {
+    path: "/Contact",
+    element: (
+      <ProtectedRoute>
+        <Contactus />
+      </ProtectedRoute>
+    ),
   },
 ]);
 

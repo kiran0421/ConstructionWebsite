@@ -13,3 +13,7 @@
 ul li Link {
   color: white;
 }
+.navbar a.active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px; /* Customize thickness */
+}

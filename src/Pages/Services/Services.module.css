@@ -1,0 +1,60 @@
+/* Querybar.module.css */
+.querybarContainer {
+  @apply flex items-center justify-between p-4 bg-gray-800 rounded-lg shadow-md;
+}
+
+.searchContainer {
+  @apply flex items-center bg-gray-700 rounded-full px-4 py-2;
+}
+
+.searchInput {
+  @apply w-full bg-transparent text-white text-sm outline-none placeholder-gray-300;
+}
+
+.searchIcon {
+  @apply text-white ml-2;
+}
+
+.filterButton {
+  @apply bg-transparent text-white p-2 rounded-full hover:bg-gray-600 transition-all;
+}
+
+.filterIcon {
+  @apply text-white;
+}
+
+.filterDropdown {
+  @apply absolute bg-white text-black shadow-lg rounded-md p-4 mt-2 w-64;
+}
+
+.categoryList {
+  @apply space-y-2;
+}
+
+.categoryItem {
+  @apply flex items-center space-x-2;
+}
+
+.categoryCheckbox {
+  @apply text-gray-700;
+}
+/* Services.module.css */
+.servicesContainer {
+  @apply p-8 bg-gray-900 min-h-screen;
+}
+
+.productsContainer {
+  @apply mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
+}
+
+.productCard {
+  @apply bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-all;
+}
+
+.productCard h3 {
+  @apply text-xl font-semibold text-gray-900;
+}
+
+.productCard p {
+  @apply text-sm text-gray-700 mt-2;
+}

@@ -1,12 +1,9 @@
-// api.js - Handles all the API calls
+import axiosInstance from "./axiosInstance";
 
 export const getProducts = async () => {
   try {
-    const response = await fetch("https://fakestoreapi.com/products");
-    if (!response.ok) {
-      throw new Error("Failed to fetch products");
-    }
-    return await response.json();
+    const response = await axiosInstance.get("/products");
+    return response.data;
   } catch (error) {
     console.error("Error fetching products:", error);
     return [];
@@ -15,13 +12,10 @@ export const getProducts = async () => {
 
 export const getUsers = async () => {
   try {
-    const response = await fetch("https://fakestoreapi.com/users");
-    if (!response.ok) {
-      throw new Error("Failed to fetch users");
-    }
-    return await response.json();
+    const response = await axiosInstance.get("/users");
+    return response.data;
   } catch (error) {
-    console.error("Error fetching users:", error);
+    console.error("Error fetching products:", error);
     return [];
   }
 };
