@@ -99,14 +99,14 @@ function Navbar() {
             Contact Us
           </NavLink>
         </li>
-        {/* <li>
+        <li>
           <a
             className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             onClick={Logout}
           >
             Logout
           </a>
-        </li> */}
+        </li>
       </ul>
     </nav>
   );

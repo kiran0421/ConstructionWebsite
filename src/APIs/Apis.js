@@ -19,3 +19,13 @@ export const getUsers = async () => {
     return [];
   }
 };
+
+export const postProduct = async (productData) => {
+  try {
+    const response = await axiosInstance.post("/products", productData);
+    return response.data;
+  } catch (error) {
+    console.error("Error posting product:", error);
+    return null;
+  }
+};

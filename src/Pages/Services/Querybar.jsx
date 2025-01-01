@@ -3,25 +3,23 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { FaSearch, FaFilter } from "react-icons/fa";
 import styles from "./Services.module.css";
 
-function Querybar({ uniqueCategories }) {
+function Querybar({ uniqueCategories, setIsModalOpen }) {
   const location = useLocation();
   const navigate = useNavigate();
+
   const [searchText, setSearchText] = useState("");
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [filterVisible, setFilterVisible] = useState(false);
 
-  // Parse query parameters from the URL
   const queryParams = new URLSearchParams(location.search);
   const initialSearchText = queryParams.get("search") || "";
   const initialCategories = queryParams.getAll("category") || [];
 
-  // Initialize the state based on the URL query params
   useEffect(() => {
     setSearchText(initialSearchText);
     setSelectedCategories(initialCategories);
   }, [location.search]);
 
-  // Update the query parameters when the search text or selected categories change
   useEffect(() => {
     const params = new URLSearchParams();
     if (searchText) {
@@ -71,6 +69,13 @@ function Querybar({ uniqueCategories }) {
         onClick={() => setFilterVisible(!filterVisible)}
       >
         <FaFilter className={styles.filterIcon} />
+      </button>
+
+      <button
+        onClick={() => setIsModalOpen(true)}
+        className="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4"
+      >
+        Add Product
       </button>
 
       {filterVisible && (
