@@ -6,6 +6,7 @@ import Querybar from "./Querybar";
 import { Outlet, useLocation } from "react-router-dom";
 import ServicesMainPage from "./ServicesMainPage";
 import ProductModal from "./ProductModal";
+import { postProduct } from "../../APIs/Apis";
 function ServicesPage() {
   const [products, setProducts] = useState([]);
   const [users, setUsers] = useState([]);
