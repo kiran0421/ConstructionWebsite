@@ -1,3 +1,4 @@
+// ServicesPage.js
 import React, { useEffect, useState } from "react";
 import { getProducts, getUsers } from "../../APIs/Apis";
 import Navbar from "../../Components/NavBar";
@@ -7,6 +8,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import ServicesMainPage from "./ServicesMainPage";
 import ProductModal from "./ProductModal";
 import { postProduct } from "../../APIs/Apis";
+
 function ServicesPage() {
   const [products, setProducts] = useState([]);
   const [users, setUsers] = useState([]);
@@ -15,11 +17,7 @@ function ServicesPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const location = useLocation();
 
-  // Fetch data method
   const fetchData = async () => {
-    // Check if data exists in localStorage and if it's valid
-
-    // If no data or data is outdated, fetch new data
     try {
       const productsData = await getProducts();
       const usersData = await getUsers();
@@ -41,6 +39,7 @@ function ServicesPage() {
   useEffect(() => {
     fetchData();
   }, []);
+
   const handleAddProduct = async (newProduct) => {
     try {
       const response = await postProduct(newProduct);
